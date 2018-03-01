@@ -36,32 +36,39 @@ function startGame() {
 
 startGame();
 
-// Assigning values to crystals.
+/* // Assigning values to crystals.
 for (var i = 0; i < valueOptions.length; i++) {
-    
-}
+
+    crystalsImage.attr("dataCrystalsValue", valueOption[i]);
+    crystalsButtons.append(crystalsImage)
+} */
 
 
 
 // On-click event when the user clicks a crystal. 
-$(".crystal-buttons").on("click", ".crystal-image", function () {
+$(".crystalButtons").on("click", ".crystalsImage", function () {
+    
+    // Determining the crystals value.
+    var crystalsValue = ($(this).attr("dataCrystalsValue"));
+    crystalsValue = parseInt(crystalsValue);
+    
     // Score goes up by the value of the clicked crystal.
     alert("You clicked a crystal");
-    score += increment;
-    alert ("Your score is: " + score);
-    $(".score").text(score);
+    score += crystalsValue;
+    console.log(score);
+    // $(".score").text(score);
 
    // User wins if the score matches the targetNumber.
    if (score === targetNumber) {
        alert("You win!");
    }
-   // 
+   /* // 
    else if (condition) {
        
    } 
    else if (score >= targetNumber) {
        alert("Sorry, you didn't win this time... Try again!");
-   }
+   } */
 
 });
 
