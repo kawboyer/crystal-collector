@@ -7,17 +7,18 @@ h1 {
     width: 300px;
 }
 
+.crystal-1,
+.crystal-2,
+.crystal-3,
+.crystal-4, {
+    position: left;
+}
+
 .instructions {
     background: pink;
     color: green;
     width: 500px;
 }
-
-.points {
-    background: green;
-    font: purple;
-}
-
 
 .scores,
 .scoreText {
@@ -32,9 +33,16 @@ h1 {
     font-size: 30px;
 }
 
+.targetNumber {
+    background: green;
+    font: purple;
+    height: 100px;
+    width: 100px;
+}
+
 .winsLosses {
     background: turquoise;
-    position: relative;
+    position: left;
     height: 50px;
     width: 100px;
 }
