@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
+
+
+
     // A random targetNumber.
     var targetNumber = [];
 
@@ -19,8 +22,6 @@ $(document).ready(function() {
 
     var crystal1 = $(".crystal1");
 
-    var crystalsValue = [];
-
     // Linking the crystal buttons with the value options.
     var crystalButtons = $(".crystalsImage");
 
@@ -36,7 +37,7 @@ $(document).ready(function() {
 
             var crystalsImage = $("<img>");
             crystalsImage.addClass("crystal-image");
-            crystalsImage.attr("src", "./assets/images/crystal-1.png");
+            crystalsImage.attr("src", "assets/images/crystal-1.png");
             crystalsImage.attr("data-crystalvalue", valueOption[i]);
             crystalButtons.append(crystalsImage);
         }   
@@ -46,8 +47,9 @@ $(document).ready(function() {
 
     // On-click event when the user clicks a crystal. 
     $(".crystalButtons").on("click", ".crystal1", function () {
-        var crystalsValue = ($(crystalButtons).attr("dataCrystalsValue"));
-        crystalsValue = parseInt(crystalsValue);
+        /* var crystalsValue = ($(.crystalButtons).attr("dataCrystalsValue"));
+        crystalsValue = parseInt(crystalsValue); */
+
         
         score += crystalsValue;
         $(".score").text(score);
@@ -65,7 +67,13 @@ $(document).ready(function() {
 
     // Score goes up by the value of the clicked crystal.
 
-    
+
+
+
+
+
+
+    /*
     // User wins if the score matches the targetNumber.
     if (score === targetNumber) {
         alert("You win!");
@@ -76,6 +84,7 @@ $(document).ready(function() {
     else {
         alert("You have a few more guesses!")
     } 
+    */
 });
 
 
