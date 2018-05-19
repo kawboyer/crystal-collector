@@ -5,10 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Crystal Collector</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
-    crossorigin="anonymous">
+  <title>Collect Crystals</title>
+  
+  <!-- Bootstrap CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
+  <!-- CSS Styles-->
+  <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 
 <body>
@@ -18,23 +21,24 @@
     <div class="jumbotron" style="background-color: purple; color: white">
       <div class="container">
         <h1 class="text-center">
-          <strong>Crystal Collector</strong>
+          <strong>Collect Crystals</strong>
         </h1>
+        <h3 class="text-center">A simple game created using jQuery</h3>
       </div>
     </div>
 
-    <!-- Main Content Row -->
+    <!-- Instructions -->
     <div class="row">
 
       <!-- Instructions Container -->
       <div class="col-lg-12">
         <div class="card card-primary">
           <div class="card-heading">
-            <h3 class="card-title text-center">Instructions</h3>
+            <h3 class="card-header text-center">Instructions</h3>
           </div>
           <div class="card-body">
             <p>
-              <small>You will be given a random number at the start of the game. There are four crystals below. By clicking on a
+              <small>At the start of the game, you'll be given a random number. There are four crystals below. By clicking on a
                 crystal you will add a specific amount of point to your total score. You win the game by matching your total
                 score to the random number, you lose the game if your total score goes above the random number. The value
                 of each crystal is hidden from you until you click on it. Each time when the game starts, the game will change
@@ -45,18 +49,17 @@
       </div>
     </div>
 
+    <!-- Scores and Crystals -->
     <div class="row">
 
       <!-- Target Score -->
       <div class="col-lg-3">
         <div class="card card-primary">
           <div class="card-heading">
-            <h3 class="card-title text-center">Target Score</h3>
+            <h3 class="card-header text-center">Target Score</h3>
           </div>
           <div class="card-body">
-            <h3 class="text-center">
-              <strong>78</strong>
-            </h3>
+            <h3 class="text-center" id="targetScore"></h3>
           </div>
         </div>
       </div>
@@ -65,37 +68,73 @@
       <div class="col-lg-3">
         <div class="card card-primary">
           <div class="card-heading">
-            <h3 class="card-title text-center">Your Score</h3>
+            <h3 class="card-header text-center">Your Score</h3>
           </div>
           <div class="card-body">
-            <h3 class="text-center">
-              <strong>24</strong>
-            </h3>
+            <h3 class="text-center" id="yourScore"></h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Crystals -->
+      <div class="col-lg-6">
+        <div class="card card-primary">
+          <div class="card-heading">
+            <h3 class="card-header text-center">Crystal Selection</h3>
+          </div>
+
+          <div class="card-body crystal-btns text-center">
+            <button class="crystal-2" data-value="">
+              <img src="./assets/images/blue.png" alt="Blue Crystal" id="blue" width="100" height="100">
+            </button>
+            <button class="crystal-3" data-value="">
+              <img src="./assets/images/orange.png" alt="Orange Crystal" id="orange" width="100" height="100">
+            </button>
+            <button class="crystal-1" data-value="">
+              <img src="./assets/images/pink.png" alt="Pink Crystal" id="pink" width="100" height="100">
+            </button>
+            <button class="crystal-4" data-value="">
+              <img src="./assets/images/purple.png" alt="Purple Crystal" id="purple" width="100" height="100">
+            </button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Your Score -->
-    <div class="col-lg-3">
-      <div class="card card-primary">
-        <div class="card-heading">
-          <h3 class="card-title text-center">Your Score</h3>
-        </div>
-        <div class="card-body">
-          <h3 class="text-center">
-            <strong>24</strong>
-          </h3>
+
+    <!-- Counters Row -->
+    <div class="row">
+
+      <div class="col-lg-6">
+        <div class="card card-primary">
+          <div class="card-heading">
+            <h3 class="card-header text-center">Win Count</h3>
+          </div>
+          <div class="card-body">
+            <h3 class="text-center" id="winCount">0</h3>
+          </div>
         </div>
       </div>
+
+      <div class="col-lg-6">
+        <div class="card card-primary">
+          <div class="card-heading">
+            <h3 class="card-header text-center">Loss Count</h3>
+          </div>
+          <div class="card-body">
+            <h3 class="text-center" id="lossCount">0</h3>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
-
-
-
-  </div>
+  <!-- Logic -->
+  <script src="assets/js/logic.js"></script>
 
 </body>
 
